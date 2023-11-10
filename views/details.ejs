@@ -1,35 +1,83 @@
-<html lang="en">
-<%- include("./partials/head.ejs") %>
+  <html lang="en">
+    <%- include("./partials/head.ejs") %>
+    <style>
+      .btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      /* Darker background on mouse-over */
+      .btn:hover {
+        background-color: RoyalBlue;
+      }
+      </style>
+    <body>
+      <%- include("./partials/nav.ejs") %>
+  
+      <div class="main-wrapper">
+        <article class="blog-post px-3 py-5 p-md-5">
+          <div class="container">
+            <header class="blog-post-header">
+              <h2 class="title mb-2"><%= blog.title %></h2>
+              <div class="meta mb-3">
+                <span class="date"><%= blog.updatedAt %></span
+                ><span class="time">2 min read</span>
+              </div>
+            </header>
+  
+            <div class="blog-post-body">
+              <p><%= blog.body %></p>
+              
+              
+      <div class="button-container">
+        <button
+          class="delete"
+          onclick="deleteBlog()"
+          data-doc="<%= blog._id %>"
+        >
+          Delete
+        </button>
 
-<body>
-  <%- include("./partials/nav.ejs") %>
-
-  <div class="details content">
-    <h2><%= blog.title %></h2>
-    <div class="content">
-      <p><%= blog.body %></p>
-    </div>
-    <a class="delete" data-doc="<%= blog._id %>">
-      <img src="/trashcan.svg" alt="delete icon">
-    </a>
-  </div>
-
-  <%- include("./partials/footer.ejs") %>
-
-  <script>
-    const trashcan = document.querySelector('a.delete');
-
-    trashcan.addEventListener('click', (e) => {
-      const endpoint = `/blogs/${trashcan.dataset.doc}`;
-
-      fetch(endpoint, {
-        method: 'DELETE',
-      })
-      .then(response => response.json())
-      .then(data => window.location.href = data.redirect)
-      .catch(err => console.log(err));
-    });
-    
-  </script>
-</body>
-</html>
+             
+            <!--//blog-comments-section-->
+          </div>
+          <!--//container-->
+        </article>
+      
+        <%- include("./partials/footer.ejs") %>
+      </div>
+      <!--//main-wrapper-->
+      <script>
+      const trashcan = document.querySelector("button.delete");
+  
+        trashcan.addEventListener("click", (e) => {
+          const endpoint = `/blogs/${trashcan.dataset.doc}`;
+  
+          fetch(endpoint, {
+            method: "DELETE",
+          })
+            .then((response) => response.json())
+            .then((data) => (window.location.href = data.redirect))
+            .catch((err) => console.log(err));
+        });
+      </script>
+      <!-- Javascript -->
+      <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+      <script src="assets/plugins/popper.min.js"></script>
+      <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  
+      <!-- Page Specific JS -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+  
+      <!-- Custom JS -->
+      <script src="assets/js/blog.js"></script>
+  
+      <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+      <script src="assets/js/demo/style-switcher.js"></script>
+    </body>
+  </html>
+  

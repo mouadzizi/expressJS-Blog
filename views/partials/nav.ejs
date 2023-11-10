@@ -1,11 +1,71 @@
-<nav>
-  <div class="site-title">
-    <a href="/"><h1>Blog Ninja</h1></a>
-    <p>A Net Ninja Site</p>
-  </div>
-  <ul>
-    <li><a href="/">Blogs</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blogs/create">New Blog</a></li>
-  </ul>
-</nav>
+<header class="header text-center">
+  <h1 class="blog-name pt-lg-4 mb-0">
+    <a href="/">Moad ZIZI</a>
+  </h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navigation"
+      aria-controls="navigation"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navigation" class="collapse navbar-collapse flex-column">
+      <div class="profile-section pt-3 pt-lg-0">
+        <img
+          class="profile-image mb-3 rounded-circle mx-auto"
+          src="/Photo.jpeg"
+          alt="image"
+        />
+
+        <div class="bio mb-3">
+          Hi, my name is Moad and this is just a Blog for fun.<br /><a
+            href="/about"
+            >Find out more about me</a
+          >
+        </div>
+        <!--//bio-->
+        <ul class="social-list list-inline py-3 mx-auto">
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/moad-zizi/" target="_blank"
+              ><i class="fab fa-linkedin-in fa-fw"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/moad-zizi/" target="_blank"
+              ><i class="fab fa-github-alt fa-fw"></i
+            ></a>
+          </li>
+        </ul>
+        <!--//social-list-->
+        <hr />
+      </div>
+      <!--//profile-section-->
+
+      <ul class="navbar-nav flex-column text-left">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"
+            ><i class="fas fa-home fa-fw mr-2"></i>Blog Home
+            <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blogs/create"
+            ><i class="fas fa-bookmark fa-fw mr-2"></i>Create a Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about"
+            ><i class="fas fa-user fa-fw mr-2"></i>About Me</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
