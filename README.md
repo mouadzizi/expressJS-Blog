@@ -31,13 +31,13 @@ Copy code
 npm start
 Usage
 
+## usage
+
 Blog Home page Preview on Desktop
 ![Blog Preview](./public/cover1.png)
 
 Blog Home page Preview on Tablet and mobile screens
 ![Blog Preview Mobile](./public/cover2.png)
-
-The home page displays a list of blog posts. Clicking on a post title will take you to the details page.
 
 The about page provides information about the blog and its creators.
 ![About page Preview](./public/aboutPage.png)
@@ -45,6 +45,7 @@ The about page provides information about the blog and its creators.
 The Details page shows the full content of a blog post.
 ![Blog Details page preview](./public/detailPage.png)
 
+## features
 Fork the repository.
 Create a new branch: git checkout -b feature/new-feature.
 Make your changes and commit: git commit -m 'Add new feature'.
